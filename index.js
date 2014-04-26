@@ -3,9 +3,9 @@
 var fs = require("fs")
 var words = {}
 var firstWordRegex = new RegExp(/^([\w\-]+),/)
+var moby = module.exports = {}
 
-fs
-  .readFileSync(__dirname + "/words.txt")
+fs.readFileSync(__dirname + "/words.txt")
   .toString()
   .split("\n")
   .forEach(function(line) {
@@ -14,16 +14,15 @@ fs
     }
   })
 
-var moby = module.exports = {}
+moby.search = function(term) {
+  var result = words[term.toLowerCase()]
+  return result ? result.split(",") : []
+}
 
-moby.search = function(word) {
-  word = word.toLowerCase()
-  var result = words[word]
-  if (result) {
-    return(result)
-  } else {
-    return("No match for " + word)
-  }
+moby.reverseSearch = function(term) {
+  return Object.keys(words).filter(function(w){
+    return words[w].match(","+term+",")
+  })
 }
 
 if (!module.parent) {
@@ -31,6 +30,18 @@ if (!module.parent) {
     console.log("\nUsage: moby <term>\n")
   } else if (process.argv.length >= 3) {
     var word = process.argv.slice(2).join(" ")
-    console.log(moby.search(word))
+    var searchResults = moby.search(word)
+    var reverseSearchResults = moby.reverseSearch(word)
+
+    if (searchResults.length > 0) {
+      console.log("\n" + searchResults.join(", "))
+    } else {
+      console.log("\nNo match found")
+    }
+
+    if (reverseSearchResults.length > 0) {
+      console.log("\nSee also:")
+      console.log(reverseSearchResults.join(", "))
+    }
   }
 }

@@ -1,18 +1,54 @@
 var assert = require('assert')
+var util = require('util')
 var moby = require('..')
 
 describe("moby", function() {
 
   describe(".search(word)", function() {
 
-    it("returns search results", function(){
-      assert(moby.search("dog").match(/hound/))
+    it("returns an array of search results", function(){
+      var result = moby.search("dog")
+      assert(util.isArray(result))
+      assert(result.length > 0)
     })
 
-    it("returns a message if no results were found", function(){
-      assert(moby.search("doggg").match(/no match/i))
+    it("includes word strings in the array", function(){
+      var result = moby.search("dog")
+      assert(result.indexOf("hound") > -1)
+      assert(result.indexOf("pup") > -1)
+      assert(result.indexOf("paw") > -1)
+    })
+
+    it("returns an empty array if no results are found", function(){
+      var result = moby.search("doggg")
+      assert(util.isArray(result))
+      assert.equal(result.length, 0)
     })
 
   })
+
+  describe(".reverseSearch(word)", function() {
+
+    it("returns an array of search results", function(){
+      var result = moby.reverseSearch("smaragdine")
+      assert(util.isArray(result))
+      assert(result.length > 0)
+    })
+
+    it("includes words that contain the search word as a synomym", function(){
+      var result = moby.reverseSearch("smaragdine")
+      assert(result.indexOf("grassy") > -1)
+      assert(result.indexOf("olive") > -1)
+      assert(result.indexOf("verdant") > -1)
+    })
+
+    it("returns an empty array if no results are found", function(){
+      var result = moby.reverseSearch("xkoiusdfdslkmm")
+      assert(util.isArray(result))
+      assert.equal(result.length, 0)
+    })
+
+  })
+
 
 })

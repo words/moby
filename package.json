@@ -1,12 +1,15 @@
 {
   "name": "moby",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Moby Thesaurus II, packaged as a node module and CLI",
   "main": "index.js",
   "bin": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/zeke/moby"
+  },
+  "scripts": {
+    "test": "mocha"
   },
   "keywords": [
     "words",
