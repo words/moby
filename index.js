@@ -5,7 +5,7 @@ var words = {}
 var firstWordRegex = new RegExp(/^([\w\-]+),/)
 
 fs
-  .readFileSync("words.txt")
+  .readFileSync(__dirname + "/words.txt")
   .toString()
   .split("\n")
   .forEach(function(line) {
