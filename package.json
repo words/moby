@@ -1,6 +1,6 @@
 {
   "name": "moby",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Moby Thesaurus II, packaged as a node module and CLI",
   "main": "index.js",
   "bin": "index.js",
