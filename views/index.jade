@@ -1,0 +1,8 @@
+mixin form(query, cssClass)
+  form(method="get" action="/search" class=cssClass)
+    input(name="q" value=q type="text" placeholder="Find synonyms" autocapitalize="off" autocorrect="off" autofocus="autofocus")
+    input(type="submit" value="Search")
+
+extends layout
+
+block content

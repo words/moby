@@ -1,0 +1,23 @@
+extends layout
+
+block content
+
+
+  if searchResults.length === 0
+    p.weak No results.
+
+  else
+    ul.results
+      for word,i in searchResults
+        if i>0
+          li
+            a(href="/search?q="+word)= word
+
+
+  if reverseSearchResults.length > 0
+    h2 See Also:
+
+    ul.results
+      for word,i in reverseSearchResults
+        li
+          a(href="/search?q="+word)= word

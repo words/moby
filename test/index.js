@@ -25,6 +25,18 @@ describe("moby", function() {
       assert.equal(result.length, 0)
     })
 
+    it("returns an empty array when given an empty string", function(){
+      var result = moby.search("")
+      assert(util.isArray(result))
+      assert.equal(result.length, 0)
+    })
+
+    it("returns an empty array when search term is null or omitted", function(){
+      var result = moby.search()
+      assert(util.isArray(result))
+      assert.equal(result.length, 0)
+    })
+
   })
 
   describe(".reverseSearch(word)", function() {
@@ -44,6 +56,18 @@ describe("moby", function() {
 
     it("returns an empty array if no results are found", function(){
       var result = moby.reverseSearch("xkoiusdfdslkmm")
+      assert(util.isArray(result))
+      assert.equal(result.length, 0)
+    })
+
+    it("returns an empty array when given an empty string", function(){
+      var result = moby.reverseSearch("")
+      assert(util.isArray(result))
+      assert.equal(result.length, 0)
+    })
+
+    it("returns an empty array when search term is null or omitted", function(){
+      var result = moby.reverseSearch()
       assert(util.isArray(result))
       assert.equal(result.length, 0)
     })
