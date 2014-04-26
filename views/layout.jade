@@ -1,7 +1,7 @@
 mixin form(query, cssClass)
   form(method="get" action="/search" class=cssClass)
     input(name="q" value=q type="text" placeholder="Find synonyms" autocapitalize="off" autocorrect="off" autofocus="autofocus")
-    input(type="submit" value="⬅")
+    //- input(type="submit" value="⬅")
 
 doctype html
 html
@@ -27,8 +27,8 @@ html
       section
         :markdown
           This is a website for perusing the
-          [Moby Thesaurus](http://en.wikipedia.org/wiki/Moby_Project#Thesaurus), a weird and
-          wonderful English-language reference full of unusual and illuminating word
+          [Moby Thesaurus](http://en.wikipedia.org/wiki/Moby_Project#Thesaurus), a [weird](/search?q=weird) and
+          [wonderful](/search?q=wonderful) language reference full of [unusual](/search?q=unusual) and [illuminating](/search?q=illuminating) word
           relationships. Thanks to [Grady Ward](http://en.wikipedia.org/wiki/Grady_Ward) for creating it.
 
           This open-source website was designed and built by [Zeke Sikelianos](http://zeke.sikelianos.com/). Check out the source code and the command-line version at [github.com/zeke/moby](https://github.com/zeke/moby).
