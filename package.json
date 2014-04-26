@@ -1,0 +1,28 @@
+{
+  "name": "moby",
+  "version": "0.1.0",
+  "description": "Moby Thesaurus II, packaged as a node module and CLI",
+  "main": "index.js",
+  "bin": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zeke/moby"
+  },
+  "keywords": [
+    "words",
+    "language",
+    "thesaurus",
+    "moby",
+    "linguistics",
+    "relations",
+    "translation",
+    "reference",
+    "data"
+  ],
+  "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zeke/moby/issues"
+  },
+  "homepage": "https://github.com/zeke/moby"
+}
