@@ -41,6 +41,11 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: #990000;
+  text-decoration: underline;
+}
+
 p {
   line-height: 1.4;
 }
