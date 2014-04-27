@@ -1,24 +1,34 @@
-mixin form(query, cssClass)
-  form(method="get" action="/search" class=cssClass)
-    input(name="q" value=q type="text" placeholder="Find synonyms" autocapitalize="off" autocorrect="off" autofocus="autofocus")
-    //- input(type="submit" value="⬅")
+mixin form(q)
+  form(method="get" action="/search")
+    input(name="q" value=q type="text" placeholder="Find synonyms" autocapitalize="off" autocorrect="off" autofocus="autofocus" x-webkit-speech)
 
 doctype html
 html
   head
     title Moby Thesaurus
-    link(rel='stylesheet', type='text/css', href='/styles.css')
-    link(href='//fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css')
     meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(href='//fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css')
+    link(rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon")
+    link(rel="apple-touch-icon" href="/images/apple-touch-icon.png")
+    link(rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon-57x57.png")
+    link(rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png")
+    link(rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76x76.png")
+    link(rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png")
+    link(rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png")
+    link(rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144x144.png")
+    link(rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152x152.png")
 
-    script(src='https://code.jquery.com/jquery-2.0.3.min.js')
+    link(rel='stylesheet', type='text/css', href='/styles.css')
+
+    //- script(src='https://code.jquery.com/jquery-2.0.3.min.js')
+
     block head
 
   body
 
     header
       section
-        +form(q, "splash")
+        +form(q)
 
     section
       block content
