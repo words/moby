@@ -37,6 +37,11 @@ describe("moby", function() {
       assert.equal(result.length, 0)
     })
 
+    it("removes the search term itself from the results", function(){
+      var result = moby.search("dog")
+      assert(result.indexOf("dog") === -1)
+    })
+
   })
 
   describe(".reverseSearch(word)", function() {

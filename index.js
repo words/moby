@@ -10,7 +10,7 @@ fs.readFileSync(__dirname + "/words.txt")
   .split("\n")
   .forEach(function(line) {
     if (line.match(firstWordRegex)) {
-      words[line.match(firstWordRegex)[1]] = line
+      words[line.match(firstWordRegex)[1]] = line.replace(firstWordRegex, "")
     }
   })
 
