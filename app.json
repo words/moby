@@ -1,7 +1,7 @@
 {
   "name": "Moby Thesaurus",
   "description": "A free and open-source website for searching the largest thesaurus in the English language.",
-  "repository": {"url": "https://github.com/zeke/moby"},
+  "repository": "https://github.com/zeke/moby",
   "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com/)",
   "license": "MIT",
   "website": "http://moby-thesaurus.org",
