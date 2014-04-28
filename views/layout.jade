@@ -5,7 +5,12 @@ mixin form(q)
 doctype html
 html
   head
-    title Moby Thesaurus
+    title
+      if q
+        = "Synonyms for '" + q + "' in the Moby Thesaurus"
+      else
+        = "Moby Thesaurus"
+
     meta(name="viewport" content="width=device-width, initial-scale=1")
     link(href='//fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css')
     link(rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon")
