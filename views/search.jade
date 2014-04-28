@@ -3,7 +3,7 @@ extends layout
 block content
 
   if searchResults.length === 0
-    p.weak= "No exact matches for " + q + "."
+    p.weak= "No entry for " + q + "."
 
   else
     ul.results
@@ -19,3 +19,8 @@ block content
       for word,i in reverseSearchResults
         li
           a(href="/search?q="+word)= word
+
+  :markdown
+    [moby-thesaurus.org](/) is a free and
+    open-source website for perusing Moby, the largest
+    thesaurus in the English language[&hellip;](/)
