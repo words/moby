@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/zeke/moby/issues"
   },
-  "homepage": "https://github.com/zeke/moby",
+  "homepage": "https://moby-thesaurus.org",
   "devDependencies": {
     "mocha": "^1.18.2"
   },

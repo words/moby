@@ -1,0 +1,20 @@
+{
+  "name": "Moby Thesaurus",
+  "description": "A free and open-source website designed to facilitate meanderings through the Moby Thesaurus, the largest thesaurus in the English language.",
+  "repository": {"url": "https://github.com/zeke/moby"},
+  "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com/)",
+  "license": "MIT",
+  "website": "http://moby-thesaurus.org",
+  "logo": "http://moby-thesaurus.org/images/moby-logo.svg",
+  "keywords": [
+    "words",
+    "language",
+    "thesaurus",
+    "moby",
+    "linguistics",
+    "relations",
+    "translation",
+    "reference",
+    "data"
+  ]
+}
