@@ -17,13 +17,14 @@ fs.readFileSync(__dirname + "/words.txt")
 moby.search = function(term) {
   if (!term) return []
   var result = words[term]
+  if (!result) result = words[term.toLowerCase()]
   return result ? result.split(",") : []
 }
 
 moby.reverseSearch = function(term) {
   if (!term) return []
   return Object.keys(words).filter(function(w){
-    return words[w].match(","+term+",")
+    return words[w].match(new RegExp(","+term+",", 'i'))
   })
 }
 

@@ -12,6 +12,12 @@ describe("moby", function() {
       assert(result.length > 0)
     })
 
+    it("is case insensitive", function(){
+      var result = moby.search("DOG")
+      assert(util.isArray(result))
+      assert(result.length > 0)
+    })
+
     it("includes word strings in the array", function(){
       var result = moby.search("dog")
       assert(result.indexOf("hound") > -1)
@@ -50,6 +56,12 @@ describe("moby", function() {
       var result = moby.reverseSearch("smaragdine")
       assert(util.isArray(result))
       assert(result.length > 0)
+    })
+
+    it("is case insensitive", function(){
+      var result = moby.reverseSearch("SMARAGDINE")
+      assert(util.isArray(result))
+      assert.equal(result.length, moby.reverseSearch("smaragdine").length)
     })
 
     it("includes words that contain the search word as a synomym", function(){
