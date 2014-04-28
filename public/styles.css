@@ -1,6 +1,6 @@
 *, *:before, *:after {
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
- }
+}
 
 body {
   font-family: "Georgia", helvetica;
@@ -15,9 +15,9 @@ header {
 }
 
 section {
-  max-width: 480px;
+  max-width: 640px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 3% 20px;
   position: relative;
 }
 
@@ -39,7 +39,7 @@ h1 {
   text-align: center;
   font-weight: normal;
   color: white;
-  font-size: 100px;
+  font-size: 80px;
   line-height: 1.4;
 }
 
@@ -72,9 +72,9 @@ form input[type=text] {
   font-family: 'Georgia', serif;
   font-size: 24px;
   margin: 0 20px 0 0;
-  padding: 6px;
+  padding: 8px 10px;
   outline: none;
-  border: 1px solid #CCC;
+  border: 2px solid #7B1515;
   background: white;
   border-radius: 4px;
   color: black;
