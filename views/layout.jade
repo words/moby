@@ -1,6 +1,6 @@
 mixin form(q)
   form(method="get" action="/search")
-    input(name="q" id="q" value=q type="text" placeholder="Find synonyms" autocapitalize="off" autocorrect="off" autofocus="autofocus" x-webkit-speech)
+    input(name="q" id="q" value=q type="text" placeholder="Find synonyms" autocapitalize="off" autocorrect="off" autofocus x-webkit-speech)
 
 doctype html
 html
@@ -35,6 +35,9 @@ html
       window.analytics.page();
 
       document.addEventListener("DOMContentLoaded", function(event) {
+
+        document.querySelector("#q").focus()
+
         var query = document.querySelector("#q").value
         var queries = store.get("queries")
         if (!queries) queries = {}
@@ -61,6 +64,8 @@ html
 
     header
       section
+        if !q
+          h1 moby
         +form(q)
 
     section
