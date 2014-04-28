@@ -11,10 +11,7 @@ body {
 
 header {
   background: #990000;
-}
-
-.weak {
-  opacity: 0.5;
+  margin-bottom: 20px;
 }
 
 section {
@@ -25,7 +22,7 @@ section {
 }
 
 ul.results {
-  margin: 30px 0;
+  margin: 10px 0 30px 0;
   padding: 0;
   list-style: none;
 }
@@ -33,24 +30,25 @@ ul.results {
 ul.results > li {
   margin: 0;
   padding: 0 0 0 5px;
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
-a {
-  color: #333;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #990000;
-  text-decoration: underline;
+h2 {
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
 }
 
 p {
   line-height: 1.4;
 }
 
-p a {
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover, p a {
   color: #990000;
   text-decoration: underline;
 }
@@ -61,7 +59,7 @@ form {
 
 form input[type=text] {
   width: 100%;
-  font-family: 'Georgia', sans-serif;
+  font-family: 'Georgia', serif;
   font-size: 24px;
   margin: 0 20px 0 0;
   padding: 6px;
@@ -72,26 +70,11 @@ form input[type=text] {
   color: black;
 }
 
-form input[type=submit] {
-  font-family: 'Georgia', sans-serif;
-  font-size: 24px;
-  margin: 0 20px 0 0;
-  padding: 6px 12px;
-  outline: none;
-  border: none;
-  border-radius: 4px;
-  color: #AA0000;
-  background: #770000;
-  cursor: pointer;
-  webkit-appearance: none;
-  transition: 0.3s all;
-/*  font-weight: bold;*/
+.weak {
+  opacity: 0.5;
 }
 
-form input[type=submit]:hover {
-  color: white;
-}
 
-@media (max-width: 640px) {
-
+footer {
+  margin-top: 100px;
 }
