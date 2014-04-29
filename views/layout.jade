@@ -38,6 +38,15 @@ html
 
         document.querySelector("#q").focus()
 
+        // Toggle view mode
+        if (document.querySelector("#mode_switcher")) {
+          document.querySelector("#mode_switcher").addEventListener('click', function(event) {
+            event.preventDefault();
+            document.body.classList.toggle('list-mode')
+          })
+        }
+
+        // Save query history in localStorage
         var query = document.querySelector("#q").value
         var queries = store.get("queries")
         if (!queries) queries = {}
@@ -51,7 +60,7 @@ html
           var recentQueryLinks = Object.keys(queries).reverse().map(function(key) {
             return "<li><a href=\"/search?q=" + queries[key] + "\">" + queries[key] + "</a><li>"
           }).join("")
-          console.log(recentQueryLinks);
+          //- console.log(recentQueryLinks);
           document.querySelector("#queries")
             .insertAdjacentHTML('afterend', "<h2>Your recent queries:</h2> <ul class='results'>" + recentQueryLinks + "</ul>")
         }

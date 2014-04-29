@@ -28,10 +28,32 @@ ul.results {
 }
 
 ul.results > li {
-  margin: 0;
-  padding: 0 0 0 5px;
   line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
 }
+
+ul.results > li:after {
+  content: ", ";
+  padding-right: 5px;
+}
+
+ul.results > li:last-child:after {
+  content: ".";
+  padding-right: 0;
+}
+
+body.list-mode ul.results > li {
+  display: block;
+  padding: 0 0 0 5px;
+}
+
+body.list-mode ul.results > li:after {
+  content: "";
+  padding-right: 0;
+}
+
 
 h1 {
   margin: 0;

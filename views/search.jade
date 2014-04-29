@@ -18,7 +18,6 @@ block content
         li
           a(href="/search?q="+word)= word
 
-
   if reverseSearchResults.length > 0
     h2 See Also:
 
@@ -29,7 +28,11 @@ block content
 
   #queries
 
-  :markdown
-    [moby-thesaurus.org](/) is a free and
-    open-source website for perusing Moby, the largest
-    thesaurus in the English language[&hellip;](/)
+  //- if searchResults.length > 0
+  //-   a(href="#")#mode_switcher Toggle display mode.
+
+  .newbs-only
+    :markdown
+      [moby-thesaurus.org](/) is a free and
+      open-source website for perusing Moby, the largest
+      thesaurus in the English language[&hellip;](/)
