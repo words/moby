@@ -6,6 +6,13 @@ block content
     p.weak= "No entry for " + q + "."
 
   else
+
+    h2
+      = searchResults.length
+      | &nbsp;synonyms for &lsquo;
+      = q
+      | &rsquo;
+
     ul.results
       for word,i in searchResults
         li
