@@ -17,7 +17,7 @@ header {
 section {
   max-width: 640px;
   margin: 0 auto;
-  padding: 3% 20px;
+  padding: 0 20px;
   position: relative;
 }
 
@@ -44,9 +44,11 @@ h1 {
 }
 
 h2 {
+  font-size: 24px;
   font-weight: normal;
   margin: 0;
-  padding: 0;
+  padding: 10px 0 10px 0;
+  color: #990000;
 }
 
 p {
@@ -71,7 +73,7 @@ form input[type=text] {
   width: 100%;
   font-family: 'Georgia', serif;
   font-size: 24px;
-  margin: 0 20px 0 0;
+  margin: 0;
   padding: 8px 10px;
   outline: none;
   border: 2px solid #7B1515;
