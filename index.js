@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 var fs = require("fs")
+var thesaurus = require("thesaurus")
+var union = require("lodash.union")
 var words = {}
 var firstWordRegex = new RegExp(/^([\w\-]+),/)
 var moby = module.exports = {}
@@ -18,7 +20,10 @@ moby.search = function(term) {
   if (!term) return []
   var result = words[term]
   if (!result) result = words[term.toLowerCase()]
-  return result ? result.split(",") : []
+  if (!result) return []
+  result = result.split(",")
+  result = union(result, thesaurus.find(term))
+  return result
 }
 
 moby.reverseSearch = function(term) {

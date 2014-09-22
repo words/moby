@@ -1,6 +1,6 @@
 {
   "name": "moby",
-  "version": "0.3.2",
+  "version": "1.0.0",
   "description": "A free and open-source website (and CLI) for searching the largest thesaurus in the English language.",
   "main": "index.js",
   "bin": "index.js",
@@ -35,6 +35,8 @@
   "dependencies": {
     "express": "^4.1.0",
     "jade": "^1.3.1",
-    "marked": "^0.3.2"
+    "lodash.union": "^2.4.1",
+    "marked": "^0.3.2",
+    "thesaurus": "0.0.0"
   }
 }
