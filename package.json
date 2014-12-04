@@ -1,6 +1,6 @@
 {
   "name": "moby",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A free and open-source website (and CLI) for searching the largest thesaurus in the English language.",
   "main": "index.js",
   "bin": "index.js",
