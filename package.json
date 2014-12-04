@@ -38,5 +38,6 @@
     "lodash.union": "^2.4.1",
     "marked": "^0.3.2",
     "thesaurus": "0.0.0"
-  }
+  },
+  "logo": "public/images/moby-logo.svg"
 }
