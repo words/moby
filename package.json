@@ -39,5 +39,5 @@
     "marked": "^0.3.2",
     "thesaurus": "0.0.0"
   },
-  "logo": "public/images/moby-logo.svg"
+  "icon": "public/images/apple-touch-icon-152x152.png"
 }
