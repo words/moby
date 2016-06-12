@@ -1,4 +1,4 @@
-var moby = require('./')
+var moby = require('.')
 var express = require('express')
 var app = module.exports = express()
 
