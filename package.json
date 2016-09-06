@@ -1,16 +1,13 @@
 {
   "name": "moby",
   "version": "1.1.1",
-  "description": "A free and open-source website (and CLI) for searching the largest thesaurus in the English language.",
+  "description": "An open-source website (and CLI) for searching the largest thesaurus in the English language.",
   "main": "index.js",
   "bin": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zeke/moby"
-  },
+  "repository": "https://github.com/zeke/moby",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha"
+    "test": "mocha && standard"
   },
   "keywords": [
     "words",
@@ -25,19 +22,20 @@
   ],
   "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com/)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/zeke/moby/issues"
-  },
-  "homepage": "https://moby-thesaurus.org",
   "devDependencies": {
-    "mocha": "^1.18.2"
+    "mocha": "^3.0.2",
+    "standard": "^8.0.0"
   },
   "dependencies": {
     "express": "^4.1.0",
     "jade": "^1.3.1",
     "lodash.union": "^2.4.1",
-    "marked": "^0.3.2",
     "thesaurus": "0.0.0"
+  },
+  "standard": {
+    "env": {
+      "mocha": true
+    }
   },
   "icon": "public/images/apple-touch-icon-152x152.png"
 }
