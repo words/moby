@@ -4,8 +4,8 @@ var fs = require('fs')
 var path = require('path')
 var thesaurus = require('thesaurus')
 var union = require('lodash.union')
-var words = {}
-var firstWordRegex = new RegExp(/^([\w\-]+),/)
+var words = new Map()
+var firstWordRegex = new RegExp(/^([\w-]+),/)
 var moby = module.exports = {}
 
 fs.readFileSync(path.join(__dirname, 'words.txt'))
@@ -13,14 +13,14 @@ fs.readFileSync(path.join(__dirname, 'words.txt'))
   .split('\n')
   .forEach(function (line) {
     if (line.match(firstWordRegex)) {
-      words[line.match(firstWordRegex)[1]] = line.replace(firstWordRegex, '')
+      words.set(line.match(firstWordRegex)[1], line.replace(firstWordRegex, ''))
     }
   })
 
 moby.search = function (term) {
   if (!term) return []
-  var result = words[term]
-  if (!result) result = words[term.toLowerCase()]
+  var result = words.get(term)
+  if (!result) result = words.get(term.toLowerCase())
   if (!result) return []
   result = result.split(',')
   result = union(result, thesaurus.find(term))
@@ -29,8 +29,8 @@ moby.search = function (term) {
 
 moby.reverseSearch = function (term) {
   if (!term) return []
-  return Object.keys(words).filter(function (w) {
-    return words[w].match(new RegExp(',' + term + ',', 'i'))
+  return Array.from(words.keys()).filter(function (w) {
+    return words.get(w).match(new RegExp(',' + term + ',', 'i'))
   })
 }
 
