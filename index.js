@@ -20,7 +20,7 @@ fs.readFileSync(path.join(__dirname, 'words.txt'))
 moby.search = function (term) {
   if (!term) return []
   var result = words.get(term)
-  if (!result) words.get(term.toLowerCase())
+  if (!result) result = words.get(term.toLowerCase())
   if (!result) return []
   result = result.split(',')
   result = union(result, thesaurus.find(term))
@@ -30,7 +30,7 @@ moby.search = function (term) {
 moby.reverseSearch = function (term) {
   if (!term) return []
   return Array.from(words.keys()).filter(function (w) {
-    return words[w].match(new RegExp(',' + term + ',', 'i'))
+    return words.get(w).match(new RegExp(',' + term + ',', 'i'))
   })
 }
 
