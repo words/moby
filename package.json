@@ -28,8 +28,9 @@
   },
   "dependencies": {
     "express": "^4.1.0",
-    "jade": "^1.3.1",
+    "jstransformer-markdown-it": "^2.1.0",
     "lodash.union": "^2.4.1",
+    "pug": "^2.0.3",
     "thesaurus": "0.0.0"
   },
   "standard": {
