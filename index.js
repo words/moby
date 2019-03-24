@@ -5,7 +5,7 @@ var path = require('path')
 var thesaurus = require('thesaurus')
 var union = require('lodash.union')
 var words = {}
-var firstWordRegex = new RegExp(/^([\w\-]+),/)
+var firstWordRegex = new RegExp(/^([\w-]+),/)
 var moby = module.exports = {}
 
 fs.readFileSync(path.join(__dirname, 'words.txt'))
