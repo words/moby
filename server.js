@@ -7,7 +7,7 @@ app.set('port', (process.env.PORT || 5000))
 app.use(express.static(path.join(__dirname, '/public')))
 
 app.use('/', express.static('public'))
-app.set('view engine', 'jade')
+app.set('view engine', 'pug')
 
 app.get('/', function (req, res) {
   res.render('index')

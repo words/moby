@@ -1,15 +1,15 @@
+extends layout
+
 mixin form(query, cssClass)
   form(method="get" action="/search" class=cssClass)
     input(name="q" value=q type="text" placeholder="Find synonyms" autocapitalize="off" autocorrect="off" autofocus="autofocus" tabindex=1)
     input(type="submit" value="Search")
 
-extends layout
-
 block content
 
   #queries
 
-  :markdown
+  :markdown-it
     Welcome to [moby-thesaurus.org](http://moby-thesaurus.org), a free and
     open-source website designed to facilitate meanderings through the [Moby
     Thesaurus](http://en.wikipedia.org/wiki/Moby_Project#Thesaurus), the largest
