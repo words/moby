@@ -2,6 +2,14 @@ extends layout
 
 block content
 
+  p.banner
+    | 👋 Hello, word lover! If you like the Moby thesaurus, you should also check out 
+    a(href="https://wordnerd.fun/" + q) Wordnerd
+    |, a new site built and maintained by the same person. Wordnerd is free for everyone, ad-free, minimally designed, and has
+    | all the content you'll find here, plus other nerdy word stuff like definitions, etymologies, and rhymes.
+    | <br><br>Check it out at 
+    a(href="https://wordnerd.fun/" + q)= "wordnerd.fun/" + q
+
   if searchResults.length === 0
     p.weak= "No entry for " + q + "."
 

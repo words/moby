@@ -77,6 +77,13 @@ p {
   line-height: 1.4;
 }
 
+p.banner {
+  background: #fae6ea;
+  padding: 25px;
+  margin: 30px 0;
+  border-radius: 5px;
+}
+
 a {
   color: #000;
   text-decoration: none;
