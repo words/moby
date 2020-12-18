@@ -1,7 +1,7 @@
-var path = require('path')
-var moby = require('./')
-var express = require('express')
-var app = module.exports = express()
+const path = require('path')
+const moby = require('./')
+const express = require('express')
+const app = module.exports = express()
 
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(path.join(__dirname, '/public')))

@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-var fs = require('fs')
-var path = require('path')
-var thesaurus = require('thesaurus')
-var union = require('lodash.union')
-var words = {}
-var firstWordRegex = new RegExp(/^([\w-]+),/)
-var moby = module.exports = {}
+const fs = require('fs')
+const path = require('path')
+const thesaurus = require('thesaurus')
+const union = require('lodash.union')
+const words = {}
+const firstWordRegex = /^([\w-]+),/
+const moby = module.exports = {}
 
 fs.readFileSync(path.join(__dirname, 'words.txt'))
   .toString()
@@ -19,7 +19,7 @@ fs.readFileSync(path.join(__dirname, 'words.txt'))
 
 moby.search = function (term) {
   if (!term) return []
-  var result = words[term]
+  let result = words[term]
   if (!result) result = words[term.toLowerCase()]
   if (!result) return []
   result = result.split(',')
@@ -38,9 +38,9 @@ if (!module.parent) {
   if (process.argv.length < 3) {
     console.log('\nUsage: moby <term>\n')
   } else if (process.argv.length >= 3) {
-    var word = process.argv.slice(2).join(' ')
-    var searchResults = moby.search(word)
-    var reverseSearchResults = moby.reverseSearch(word)
+    const word = process.argv.slice(2).join(' ')
+    const searchResults = moby.search(word)
+    const reverseSearchResults = moby.reverseSearch(word)
 
     if (searchResults.length > 0) {
       console.log('\n' + searchResults.join(', '))
