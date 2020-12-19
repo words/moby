@@ -21,13 +21,19 @@ app.get('/', function (req, res) {
   res.render('index')
 })
 
-app.get('/search', function (req, res) {
+app.get('/search', async (req, res) => {
+  return res.redirect(`/${req.query.q}`)
+})
+
+app.get('/:query', async (req, res, next) => {
+  const q = req.params.query
   res.render('search', {
-    q: req.query.q,
-    searchResults: moby.search(req.query.q),
-    reverseSearchResults: moby.reverseSearch(req.query.q)
+    q,
+    searchResults: moby.search(q),
+    reverseSearchResults: moby.reverseSearch(q)
   })
 })
+
 
 if (!module.parent) {
   app.listen(app.get('port'), function () {
