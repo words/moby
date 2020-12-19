@@ -8,7 +8,8 @@
   "scripts": {
     "start": "node server.js",
     "test": "mocha && standard",
-    "lint": "standard --fix"
+    "lint": "standard --fix",
+    "dev": "nodemon server.js"
   },
   "keywords": [
     "words",
@@ -25,6 +26,7 @@
   "license": "MIT",
   "devDependencies": {
     "mocha": "^3.0.2",
+    "nodemon": "^2.0.6",
     "standard": "^16.0.3"
   },
   "dependencies": {
