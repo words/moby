@@ -19,7 +19,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 360
 
     steps:
     - name: Checkout
@@ -39,7 +39,7 @@ jobs:
 
     - name: Build static site
       run: npm run build
-      timeout-minutes: 45
+      timeout-minutes: 330
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
