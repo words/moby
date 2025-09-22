@@ -34,7 +34,6 @@ app.get('/:query', async (req, res, next) => {
   })
 })
 
-
 if (!module.parent) {
   app.listen(app.get('port'), function () {
     console.log('Moby is running at localhost:' + app.get('port'))
